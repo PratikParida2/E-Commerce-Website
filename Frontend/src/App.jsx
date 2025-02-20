@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import {Outlet} from 'react-router-dom';
+import {ToastContainer} from 'react-toastify';
+import Navigation from './pages/Auth/Navigation';
+import 'react-toastify/ReactToastify.css';
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-        <h1 className='bg-red-700'>E Commerce Store</h1>
-        <h1 className='bg-slate-800'>Heading</h1>
+       <ToastContainer/>
+       <Outlet/>
+       <Navigation/>
+       <main className="py-3">
+
+       </main>
     </>
   )
 }
