@@ -4,11 +4,16 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter,createRoutesFromElements } from 'react-router'
 import { createBrowserRouter ,RouterProvider} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import {store} from './Redux/store.js';
 const router=createBrowserRouter([{
   path:'/',
   element:<App/>
 }]);
 
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+      <RouterProvider router={router} />
+  </Provider>
+
 )
